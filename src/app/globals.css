@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary: oklch(49.849% 0.20182 262.726);
+  --color-primary: oklch(59.78% 0.06634 70.79);
   --color-secondary: #6b7280;
   --color-dark: #1f2937;
   --color-light: #f9fafb;
@@ -78,7 +78,7 @@ a {
     background-position: 0% 50%;
   }
 }
-
+/* 
 stes {
-  color: oklch(49.849% 0.20182 262.726);
-}
+  color: oklch(59.78% 0.06634 70.79);
+} */
