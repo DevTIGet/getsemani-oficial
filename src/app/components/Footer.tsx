@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { FaInstagram, FaYoutube } from 'react-icons/fa'
-import { FaXTwitter } from 'react-icons/fa6'
+import Link from "next/link";
+import { FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
-import { Logo } from '@/app/components/Navbar/Logo'
+import { Logo } from "@/app/components/Navbar/Logo";
 
 export default function Footer() {
   return (
@@ -164,5 +164,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
