@@ -13,13 +13,37 @@ type PropType = {
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { slides, options } = props;
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel(options, [
     Autoplay({ delay: 105000, stopOnInteraction: false }),
   ]);
-  const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
-    containScroll: "keepSnaps",
-    dragFree: true,
-  });
+
+  // Configuração diferente para mobile e desktop
+  const thumbsOptions = isMobile
+    ? {
+        dragFree: true,
+        skipSnaps: true,
+        watchDrag: true,
+      }
+    : {
+        containScroll: "trimSnaps",
+        dragFree: false,
+        align: "center" as const,
+      };
+
+  const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel(thumbsOptions);
 
   const onThumbClick = useCallback(
     (index: number) => {
@@ -32,7 +56,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const onSelect = useCallback(() => {
     if (!emblaMainApi || !emblaThumbsApi) return;
     setSelectedIndex(emblaMainApi.selectedScrollSnap());
-    emblaThumbsApi.scrollTo(emblaMainApi.selectedScrollSnap());
   }, [emblaMainApi, emblaThumbsApi, setSelectedIndex]);
 
   useEffect(() => {
@@ -70,7 +93,9 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
       {/* Thumbnails */}
       <div
-        className="overflow-hidden flex justify-center py-6 bg-white dark:bg-gray-900"
+        className={`overflow-hidden py-6 bg-white dark:bg-gray-900 px-4 md:px-0 ${
+          isMobile ? "" : "flex justify-center"
+        }`}
         ref={emblaThumbsRef}
       >
         <div className="flex gap-3">
