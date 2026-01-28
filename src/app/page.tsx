@@ -1,8 +1,17 @@
+import EmblaCarousel from "./components/EmblaCarousel";
+
+const slides = [
+  "/imagens/slides/teste3.jpg",
+  "/imagens/slides/teste.jpg",
+  "/imagens/slides/teste2.jpg",
+  "/imagens/slides/teste4.jpg",
+  "/imagens/slides/event.jpg",
+];
+
 export default function Home() {
   return (
-    <div>
-      <h1>Página Inicial</h1>
-      <h2>teste</h2>
+    <div className="w-full">
+      <EmblaCarousel slides={slides} options={{ loop: true }} />
     </div>
-  )
+  );
 }

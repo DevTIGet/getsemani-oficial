@@ -1,31 +1,37 @@
-import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDownIcon } from '@heroicons/react/24/outline'
-import type { MenuItem } from '@/app/constants/navigation'
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import type { MenuItem } from "@/app/constants/navigation";
 
 type DropdownMenuProps = {
-  item: MenuItem
-  isOpen: boolean
-  onToggle: () => void
-  onClose: () => void
-}
+  item: MenuItem;
+  isOpen: boolean;
+  isScrolled?: boolean;
+  onToggle: () => void;
+  onClose: () => void;
+};
 
 export const DropdownMenu = ({
   item,
   isOpen,
+  isScrolled = true,
   onToggle,
   onClose,
 }: DropdownMenuProps) => {
+  const textColorClass = !isScrolled
+    ? "text-white hover:text-gray-200"
+    : "text-gray-600 dark:text-gray-300 hover:text-primary";
+
   return (
     <div className="relative">
       <button
         onClick={onToggle}
-        className="flex items-center gap-1 hover:text-primary transition-colors font-semibold text-gray-600 dark:text-gray-300"
+        className={`flex items-center gap-1 transition-colors font-semibold ${textColorClass}`}
       >
         {item.label}
         <ChevronDownIcon
           className={`h-4 w-4 transition-transform duration-200 ${
-            isOpen ? 'rotate-180' : ''
+            isOpen ? "rotate-180" : ""
           }`}
         />
       </button>
@@ -52,5 +58,5 @@ export const DropdownMenu = ({
         )}
       </AnimatePresence>
     </div>
-  )
-}
+  );
+};

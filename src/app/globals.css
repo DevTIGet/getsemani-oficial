@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --color-primary: oklch(59.78% 0.06634 70.79);
@@ -8,9 +8,6 @@
   --color-light: #f9fafb;
   --color-text: #000000;
   --color-bg: #ffffff;
-
-  --font-sans: 'Inter', sans-serif;
-  --font-handwriting: 'Inspiration', cursive;
 
   --animation-fade-in: fadeIn 0.5s ease-in-out;
   --animation-slide-up: slideUp 0.5s ease-in-out;
