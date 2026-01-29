@@ -1,8 +1,10 @@
+import EmblaCarousel from "./components/EmblaCarousel";
+import { CAROUSEL_SLIDES, CAROUSEL_OPTIONS } from "./constants/carousel";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Página Inicial</h1>
-      <h2>teste</h2>
+    <div className="w-full">
+      <EmblaCarousel slides={CAROUSEL_SLIDES} options={CAROUSEL_OPTIONS} />
     </div>
-  )
+  );
 }
