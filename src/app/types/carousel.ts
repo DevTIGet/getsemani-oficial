@@ -1,7 +1,14 @@
 import { EmblaOptionsType } from "embla-carousel";
 
+export type SlideData = {
+  imageSlide: string;
+  logoEvento: string;
+  titulo: string;
+  sloganEvento: string;
+};
+
 export type CarouselProps = {
-  slides: readonly string[] | string[];
+  slides: readonly SlideData[] | SlideData[];
   options?: EmblaOptionsType;
   autoplayDelay?: number;
 };
@@ -13,9 +20,14 @@ export type CarouselSlideProps = {
 };
 
 export type CarouselThumbnailsProps = {
-  slides: readonly string[] | string[];
+  slides: readonly SlideData[] | SlideData[];
   selectedIndex: number;
   isMobile: boolean;
   onThumbClick: (index: number) => void;
   emblaRef: (node: HTMLDivElement | null) => void;
+};
+
+export type SlideOverlayProps = {
+  slide: SlideData;
+  isVisible: boolean;
 };
