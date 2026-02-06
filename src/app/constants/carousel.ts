@@ -1,14 +1,46 @@
+import { SlideData } from "@/app/types/carousel";
+
 /**
  * Carousel slides configuration
- * Contains the paths to the carousel images
+ * Contains slide data with image, logo, title and slogan
  */
-export const CAROUSEL_SLIDES = [
-  "/imagens/slides/teste.jpg",
-  "/imagens/slides/teste2.jpg",
-  "/imagens/slides/teste4.jpg",
-  "/imagens/slides/teste3.webp",
-  "/imagens/slides/event.jpg",
-] as const;
+export const CAROUSEL_SLIDES: SlideData[] = [
+  {
+    imageSlide: "/imagens/slides/teste.jpg",
+    logoEvento: "/logos/logo-white.svg",
+    titulo: "Encontro de Adoração",
+    sloganEvento:
+      "Uma noite especial de louvor e adoração para renovar sua fé e fortalecer sua caminhada.",
+  },
+  {
+    imageSlide: "/imagens/slides/teste2.jpg",
+    logoEvento: "/logos/logo-white.svg",
+    titulo: "Conferência de Jovens",
+    sloganEvento:
+      "Desperte o propósito que Deus tem para a sua vida nesta conferência transformadora.",
+  },
+  {
+    imageSlide: "/imagens/slides/teste4.png",
+    logoEvento: "/logos/logo-white.svg",
+    titulo: "Culto de Celebração",
+    sloganEvento:
+      "Venha celebrar as bênçãos e vitórias que Deus tem derramado sobre nossas vidas.",
+  },
+  {
+    imageSlide: "/imagens/slides/teste3.webp",
+    logoEvento: "/imagens/slides/conferencia_get_up_elas_logo.png",
+    titulo: "Conferência GETUP Elas",
+    sloganEvento:
+      "Um evento dedicado às mulheres, para inspirar, fortalecer e empoderar na caminhada de fé.",
+  },
+  {
+    imageSlide: "/imagens/slides/event.jpg",
+    logoEvento: "/logos/logo-white.svg",
+    titulo: "Evento Especial",
+    sloganEvento:
+      "Um momento único para toda a família. Traga quem você ama e viva essa experiência.",
+  },
+];
 
 /**
  * Carousel options configuration

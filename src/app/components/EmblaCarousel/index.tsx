@@ -6,6 +6,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { useIsMobile } from "@/app/hooks/useIsMobile";
 import CarouselSlide from "./CarouselSlide";
 import CarouselThumbnails from "./CarouselThumbnails";
+import SlideOverlay from "./SlideOverlay";
 import { CarouselProps } from "@/app/types/carousel";
 import {
   DEFAULT_AUTOPLAY_DELAY,
@@ -13,10 +14,6 @@ import {
   DESKTOP_THUMBS_OPTIONS,
 } from "@/app/constants/carousel";
 
-/**
- * Main carousel component with autoplay and thumbnail navigation
- * Supports responsive behavior with different configurations for mobile and desktop
- */
 const EmblaCarousel = memo(
   ({
     slides,
@@ -24,6 +21,7 @@ const EmblaCarousel = memo(
     autoplayDelay = DEFAULT_AUTOPLAY_DELAY,
   }: CarouselProps) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
+    const [showOverlay, setShowOverlay] = useState(false);
     const isMobile = useIsMobile();
 
     const [emblaMainRef, emblaMainApi] = useEmblaCarousel(options, [
@@ -61,20 +59,37 @@ const EmblaCarousel = memo(
       };
     }, [emblaMainApi, handleSelect]);
 
+    useEffect(() => {
+      setShowOverlay(false);
+
+      const overlayTimer = setTimeout(() => {
+        setShowOverlay(true);
+      }, 500);
+
+      return () => {
+        clearTimeout(overlayTimer);
+      };
+    }, [selectedIndex]);
+
     return (
       <div className="w-full">
         {/* Main Carousel */}
-        <div className="overflow-hidden" ref={emblaMainRef}>
-          <div className="flex">
-            {slides.map((src, index) => (
-              <CarouselSlide
-                key={`${src}-${index}`}
-                src={src}
-                alt={`Slide ${index + 1}`}
-                priority={index === 0}
-              />
-            ))}
+        <div className="relative">
+          <div className="overflow-hidden" ref={emblaMainRef}>
+            <div className="flex">
+              {slides.map((slide, index) => (
+                <CarouselSlide
+                  key={`${slide.imageSlide}-${index}`}
+                  src={slide.imageSlide}
+                  alt={`Slide ${index + 1}`}
+                  priority={index === 0}
+                />
+              ))}
+            </div>
           </div>
+
+          {/* Overlay */}
+          <SlideOverlay slide={slides[selectedIndex]} isVisible={showOverlay} />
         </div>
 
         {/* Thumbnails */}

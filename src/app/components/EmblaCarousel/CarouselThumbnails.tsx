@@ -2,9 +2,6 @@ import { memo } from "react";
 import { CarouselThumbnailsProps } from "@/app/types/carousel";
 import ThumbnailItem from "./ThumbnailItem";
 
-/**
- * Carousel thumbnails gallery component
- */
 const CarouselThumbnails = memo(
   ({
     slides,
@@ -21,10 +18,10 @@ const CarouselThumbnails = memo(
         ref={emblaRef}
       >
         <div className="flex gap-3">
-          {slides.map((src, index) => (
+          {slides.map((slide, index) => (
             <ThumbnailItem
-              key={`${src}-${index}`}
-              src={src}
+              key={`${slide.imageSlide}-${index}`}
+              src={slide.imageSlide}
               alt={`Thumbnail ${index + 1}`}
               isSelected={index === selectedIndex}
               onClick={() => onThumbClick(index)}
