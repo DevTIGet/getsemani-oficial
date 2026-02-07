@@ -9,7 +9,7 @@ export default function TVGetSection() {
     <section className="w-full py-12 md:py-16 my-8 bg-linear-to-b from-[#cdaa80] via-[#cdaa80] to-primary">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
-          <span className="text-white text-2xl md:text-3xl font-bold tracking-wide">
+          <span className="text-white text-2xl md:text-4xl font-bold tracking-wide">
             TVGet
           </span>
           <Link
@@ -18,7 +18,7 @@ export default function TVGetSection() {
           >
             VER TODOS{" "}
             <span className="text-lg">
-              <FiArrowUpRight className="text-white font-bold" />
+              <FiArrowUpRight className="text-white font-bold stroke-3" />
             </span>
           </Link>
         </div>

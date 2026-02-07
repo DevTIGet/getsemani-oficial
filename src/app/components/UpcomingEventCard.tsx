@@ -15,7 +15,7 @@ export default function UpcomingEventCard({
   link,
 }: UpcomingEventCardProps) {
   return (
-    <div className="flex-1 bg-white rounded-2xl shadow-md flex flex-col overflow-hidden">
+    <div className="flex-1 rounded-2xl shadow-md flex flex-col overflow-hidden">
       <div className="relative w-full h-44 md:h-56">
         <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
@@ -29,7 +29,7 @@ export default function UpcomingEventCard({
           className="mt-2 text-primary-blue text-sm font-bold flex items-center gap-1 hover:underline"
         >
           Ver mais
-          <FiArrowUpRight className="text-primary-blue font-bold" />
+          <FiArrowUpRight className="text-primary-blue font-bold stroke-3" />
         </Link>
       </div>
     </div>

@@ -29,7 +29,7 @@ export default function UpcomingEventsSection() {
     <section className="w-full py-12 md:py-16 my-8 ">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-primary-blue dark:text-white text-2xl md:text-3xl font-bold tracking-wide">
+          <h2 className="text-primary-blue dark:text-white text-2xl md:text-4xl font-bold tracking-wide">
             Próximos Eventos
           </h2>
           <Link
@@ -38,7 +38,7 @@ export default function UpcomingEventsSection() {
           >
             VER TODOS
             <span className="text-lg">
-              <FiArrowUpRight className="font-bold" />
+              <FiArrowUpRight className="font-bold stroke-3" />
             </span>
           </Link>
         </div>
