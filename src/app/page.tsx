@@ -1,5 +1,6 @@
 import EmblaCarousel from "@/app/components/EmblaCarousel";
 import WelcomeSection from "@/app/components/WelcomeSection";
+import TVGetSection from "@/app/components/TVGetSection";
 import { CAROUSEL_SLIDES, CAROUSEL_OPTIONS } from "@/app/constants/carousel";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div className="w-full">
       <EmblaCarousel slides={CAROUSEL_SLIDES} options={CAROUSEL_OPTIONS} />
       <WelcomeSection />
+      <TVGetSection />
     </div>
   );
 }
