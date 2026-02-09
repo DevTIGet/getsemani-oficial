@@ -1,35 +1,36 @@
 export type MenuItem = {
-  label: string
-  href?: string
-  submenu?: SubMenuItem[]
-}
+  label: string;
+  href?: string;
+  submenu?: SubMenuItem[];
+};
 
 export type SubMenuItem = {
-  label: string
-  href: string
-}
+  label: string;
+  href: string;
+};
 
 export const menuItems: MenuItem[] = [
   {
-    label: 'Igreja',
+    label: "Igreja",
     submenu: [
-      { label: 'Conheça', href: '/igreja/conheca' },
-      { label: 'Onde Estamos', href: '/igreja/onde-estamos' },
-      { label: 'Ministérios', href: '/igreja/ministerios' },
+      { label: "Sobre Nós", href: "/igreja/sobre-nos" },
+      { label: "Onde Estamos", href: "/igreja/onde-estamos" },
+      { label: "Ministérios", href: "/igreja/ministerios" },
+      { label: "Missões", href: "/igreja/missoes" },
     ],
   },
-  { label: 'Agenda', href: '/#agenda' },
+  { label: "Agenda", href: "/#agenda" },
   {
-    label: 'Informações',
+    label: "Informações",
     submenu: [
-      { label: 'Cursos', href: '/informacoes/cursos' },
-      { label: 'Notícias', href: '/informacoes/noticias' },
-      { label: 'Colégio', href: '/informacoes/colegio' },
-      { label: 'Líderes', href: '/informacoes/lideres' },
-      { label: 'Libras', href: '/informacoes/libras' },
-      { label: 'InfoGet', href: '/informacoes/infoget' },
+      { label: "Cursos", href: "/informacoes/cursos" },
+      { label: "Notícias", href: "/informacoes/noticias" },
+      { label: "Colégio", href: "/informacoes/colegio" },
+      { label: "Líderes", href: "/informacoes/lideres" },
+      { label: "Libras", href: "/informacoes/libras" },
+      { label: "InfoGet", href: "/informacoes/infoget" },
     ],
   },
-  { label: 'Ofertas', href: '/#offers' },
-  { label: 'Contato', href: '/#contact' },
-]
+  { label: "Ofertas", href: "/#offers" },
+  { label: "Contato", href: "/#contact" },
+];

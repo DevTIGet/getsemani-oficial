@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -11,9 +12,12 @@ import { DesktopMenu } from "@/app/components/Navbar/DesktopMenu";
 import { MobileMenu } from "@/app/components/Navbar/MobileMenu";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
+  // Se não está na home, já começa sólida
+  const isHome = pathname === "/";
+  const [isScrolled, setIsScrolled] = useState(!isHome);
 
   const {
     isMobileMenuOpen,
@@ -29,13 +33,13 @@ const Navbar = () => {
   useClickOutside(dropdownRef, closeDropdown);
 
   useEffect(() => {
+    if (!isHome) return; // só escuta scroll na home
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHome]);
 
   // Determina se o background deve ser exibido
   const showBackground = isScrolled || isMobileMenuOpen;

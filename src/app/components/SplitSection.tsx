@@ -3,6 +3,7 @@ import Link from "next/link";
 
 interface SplitSectionProps {
   eyebrow?: string;
+  eyebrowColor?: string;
   title: string;
   description: string;
   buttonText?: string;
@@ -27,9 +28,10 @@ export default function SplitSection({
   imageSrc,
   imageAlt,
   imagePosition = "right",
-  backgroundColor = "bg-white",
-  textColor = "text-black",
-  descriptionColor = "text-gray-600",
+  backgroundColor,
+  textColor,
+  descriptionColor = "text-gray-600 dark:text-gray-400",
+  eyebrowColor,
 }: SplitSectionProps) {
   return (
     <section className={`w-full overflow-hidden ${backgroundColor}`}>
@@ -48,7 +50,7 @@ export default function SplitSection({
             <div className="w-full max-w-lg">
               {eyebrow && (
                 <p
-                  className={`text-sm md:text-base mb-2 ${descriptionColor} font-medium`}
+                  className={`text-sm md:text-xl mb-2 ${eyebrowColor} font-medium`}
                 >
                   {eyebrow}
                 </p>

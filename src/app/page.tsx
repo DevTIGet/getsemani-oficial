@@ -70,7 +70,6 @@ export default function Home() {
         imageSrc="/imagens/slides/teste4.png"
         imageAlt="Grupo de célula em atividade"
         imagePosition="right"
-        backgroundColor="bg-white dark:bg-gray-900"
         textColor="text-black dark:text-white"
         descriptionColor="text-gray-600 dark:text-gray-400"
       />
