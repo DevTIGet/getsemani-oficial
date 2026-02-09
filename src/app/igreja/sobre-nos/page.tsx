@@ -1,6 +1,7 @@
 import SplitSection from "@/app/components/SplitSection";
 import { SloganSection } from "../_components/SloganSection";
 import { InfoCardsSection } from "../_components/InfoCardsSection";
+import { ProgrammingBarSection } from "../_components/ProgrammingBarSection";
 
 const About = () => {
   return (
@@ -18,6 +19,7 @@ const About = () => {
         descriptionColor="text-gray-600 dark:text-gray-400"
       />
 
+      <ProgrammingBarSection />
       <SloganSection />
 
       <div className="grid ">
