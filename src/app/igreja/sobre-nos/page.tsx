@@ -1,5 +1,6 @@
 import SplitSection from "@/app/components/SplitSection";
 import { SloganSection } from "../_components/SloganSection";
+import { InfoCardsSection } from "../_components/InfoCardsSection";
 
 const about = () => {
   return (
@@ -41,6 +42,8 @@ const about = () => {
           textColor="text-white"
           descriptionColor="text-white/90"
         />
+
+        <InfoCardsSection />
       </div>
     </div>
   );
