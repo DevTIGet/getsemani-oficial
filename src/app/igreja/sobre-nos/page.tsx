@@ -18,6 +18,30 @@ const about = () => {
       />
 
       <SloganSection />
+
+      <div className="grid ">
+        <SplitSection
+          title="Atitude de ser Atitude Pertencer"
+          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          imageSrc="/imagens/slides/teste.jpg"
+          imageAlt="Atitude"
+          imagePosition="left"
+          backgroundColor="bg-primary"
+          textColor="text-white"
+          descriptionColor="text-white/90"
+        />
+
+        <SplitSection
+          title="Quem é o Pr. Jorge Linhares"
+          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. g industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
+          imageSrc="/imagens/slides/teste4.png"
+          imageAlt="Pastor Jorge Linhares"
+          imagePosition="right"
+          backgroundColor="bg-primary"
+          textColor="text-white"
+          descriptionColor="text-white/90"
+        />
+      </div>
     </div>
   );
 };
