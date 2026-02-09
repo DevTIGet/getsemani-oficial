@@ -1,39 +1,28 @@
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
-import UpcomingEventCard from "./UpcomingEventCard";
+import UpcomingEventCard, { UpcomingEventCardProps } from "./UpcomingEventCard";
 
-const events = [
-  {
-    image: "/imagens/slides/teste.jpg",
-    date: "Outubro 29, 2025",
-    title: "CULTO DOS EMPREENDEDORES",
-    link: "#",
-  },
-  {
-    image: "/imagens/slides/teste2.jpg",
-    date: "Novembro 10, 2025",
-    title: "CONFERÊNCIA DE JOVENS",
-    link: "#",
-  },
-  {
-    image: "/imagens/slides/teste4.png",
-    date: "Dezembro 5, 2025",
-    title: "CULTO DE CELEBRAÇÃO",
-    link: "#",
-  },
-];
+type UpcomingEventProps = {
+  title: string;
+  href: string;
+  events: UpcomingEventCardProps[];
+};
 
-export default function UpcomingEventsSection() {
+export default function UpcomingEventsSection({
+  title,
+  href,
+  events,
+}: UpcomingEventProps) {
   return (
     <section className="w-full py-12 md:py-16 my-8 ">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-primary-blue dark:text-white text-2xl md:text-4xl font-bold tracking-wide">
-            Próximos Eventos
+            {title}
           </h2>
           <Link
-            href="#"
+            href={href}
             className="text-primary text-xs md:text-base font-bold flex items-center gap-1 hover:underline"
           >
             VER TODOS

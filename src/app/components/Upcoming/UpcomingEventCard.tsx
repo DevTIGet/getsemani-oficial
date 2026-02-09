@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
-type UpcomingEventCardProps = {
+export type UpcomingEventCardProps = {
   image: string;
   date: string;
   title: string;

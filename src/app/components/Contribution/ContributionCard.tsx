@@ -1,6 +1,6 @@
 import { FiArrowUpRight } from "react-icons/fi";
 
-type ContributionCardProps = {
+export type ContributionCardProps = {
   image: string;
   title: string;
   link?: string;
