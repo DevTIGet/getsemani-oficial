@@ -61,7 +61,7 @@ export default function TVGetSection() {
         </div>
 
         {size === "small" && (
-          <div className="absolute bottom-2 right-5 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-3">
+          <div className="absolute bottom-2 right-5 bg-linear-to-t from-black/80 via-black/50 to-transparent p-3">
             <h4 className="text-white font-bold text-xs md:text-sm drop-shadow-md line-clamp-1">
               {video.title}
             </h4>
@@ -75,7 +75,7 @@ export default function TVGetSection() {
   };
 
   return (
-    <section className="w-full py-12 md:py-16 my-8 bg-gradient-to-b from-[#cdaa80] via-[#cdaa80] to-[#b89968]">
+    <section className="w-full py-12 md:py-16 my-8 bg-linear-to-b from-[#cdaa80] via-[#cdaa80] to-[#b89968]">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
           <span className="text-white text-2xl md:text-4xl font-bold tracking-wide">
