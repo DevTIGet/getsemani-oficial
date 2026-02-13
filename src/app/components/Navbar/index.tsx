@@ -93,9 +93,9 @@ const Navbar = () => {
           </motion.button>
         </div>
 
-        {/menuItems={menuItems}
-          * Mobile Menu */}
+        {/* Mobile Menu */}
         <MobileMenu
+          menuItems={menuItems}
           isOpen={isMobileMenuOpen}
           theme={theme}
           openSubmenu={openMobileSubmenu}
