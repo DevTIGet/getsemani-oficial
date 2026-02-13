@@ -1,6 +1,6 @@
 import SplitSection from "@/app/components/SplitSection";
-import VolunteerCarousel from "./VolunteerCarousel";
-import MinistriesGrid from "./MinistriesGrid";
+import VolunteerCarousel from "@/app/igreja/_components/ministries/VolunteerCarousel";
+import MinistriesGrid from "@/app/igreja/_components/ministries/MinistriesGrid";
 import { MINISTRIES_DATA } from "@/app/constants/ministries";
 
 const Ministries = () => {

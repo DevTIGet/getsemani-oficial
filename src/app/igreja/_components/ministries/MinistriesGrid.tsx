@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import MobileMinistryTabs from "./components/MobileMinistryTabs";
-import DesktopMinistrySidebar from "./components/DesktopMinistrySidebar";
-import MinistryCard from "./components/MinistryCard";
+import MobileMinistryTabs from "./tabs/MobileMinistryTabs";
+import DesktopMinistrySidebar from "./sidebar/DesktopMinistrySidebar";
+import MinistryCard from "./card/MinistryCard";
 
 export interface Ministry {
   id: number;
