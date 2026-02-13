@@ -80,3 +80,13 @@ a {
 stes {
   color: oklch(59.78% 0.06634 70.79);
 } */
+
+/* Esconder scrollbar mas manter funcionalidade de scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
