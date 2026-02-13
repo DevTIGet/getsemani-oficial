@@ -22,7 +22,7 @@ export default function TVGetSection({ videos }: TVGetSectionProps) {
     video,
     size = "large",
   }: {
-    video: VideoData;
+    video: Video;
     size?: "large" | "small";
   }) => {
     const isPlaying = playingVideoId === video.id;

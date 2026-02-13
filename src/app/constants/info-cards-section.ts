@@ -21,7 +21,7 @@ export const SCHEDULE_EVENTS: ScheduleEvent[] = [
     id: 3,
     title: "SÁBADO",
     day: "SÁB",
-    times: ["19h"],
+    times: ["9h", "13h", "19h", "20h"],
     variant: "primary",
   },
 ];
