@@ -23,6 +23,19 @@ const Ministries = () => {
       <VolunteerCarousel />
 
       <MinistriesGrid ministries={MINISTRIES_DATA} />
+
+      <SplitSection
+        title="QUER SERVIR EM UM MINISTERIO?"
+        description="is simply dummy text of the printing and typesetting industry."
+        buttonText="QUERO SERVIR"
+        buttonHref="#ministerios"
+        imageSrc="/imagens/slides/teste4.png"
+        imageAlt="Grupo de voluntários em atividade"
+        imagePosition="right"
+        textColor="text-white"
+        descriptionColor="text-white/90"
+        backgroundColor="bg-primary"
+      />
     </div>
   );
 };
