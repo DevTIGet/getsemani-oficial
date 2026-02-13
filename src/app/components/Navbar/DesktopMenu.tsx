@@ -2,9 +2,10 @@ import Link from "next/link";
 import { forwardRef } from "react";
 import { DropdownMenu } from "./DropdownMenu";
 import { ThemeToggle } from "./ThemeToggle";
-import { menuItems } from "@/app/constants/navigation";
+import type { MenuItem } from "@/app/types/navigation";
 
 type DesktopMenuProps = {
+  menuItems: MenuItem[];
   theme: string;
   isScrolled?: boolean;
   openDropdown: string | null;
@@ -16,6 +17,7 @@ type DesktopMenuProps = {
 export const DesktopMenu = forwardRef<HTMLDivElement, DesktopMenuProps>(
   (
     {
+      menuItems,
       theme,
       isScrolled = true,
       openDropdown,

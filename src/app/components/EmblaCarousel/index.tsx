@@ -8,17 +8,14 @@ import CarouselSlide from "./CarouselSlide";
 import CarouselThumbnails from "./CarouselThumbnails";
 import SlideOverlay from "./SlideOverlay";
 import { CarouselProps } from "@/app/types/carousel";
-import {
-  DEFAULT_AUTOPLAY_DELAY,
-  MOBILE_THUMBS_OPTIONS,
-  DESKTOP_THUMBS_OPTIONS,
-} from "@/app/constants/carousel";
 
 const EmblaCarousel = memo(
   ({
     slides,
     options,
-    autoplayDelay = DEFAULT_AUTOPLAY_DELAY,
+    autoplayDelay = 105000,
+    mobileThumbsOptions,
+    desktopThumbsOptions,
   }: CarouselProps) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [showOverlay, setShowOverlay] = useState(false);
@@ -28,9 +25,7 @@ const EmblaCarousel = memo(
       Autoplay({ delay: autoplayDelay, stopOnInteraction: false }),
     ]);
 
-    const thumbsOptions = isMobile
-      ? MOBILE_THUMBS_OPTIONS
-      : DESKTOP_THUMBS_OPTIONS;
+    const thumbsOptions = isMobile ? mobileThumbsOptions : desktopThumbsOptions;
     const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel(thumbsOptions);
 
     const handleThumbClick = useCallback(

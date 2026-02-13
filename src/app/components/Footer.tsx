@@ -5,9 +5,20 @@ import { FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 import { Logo } from "@/app/components/Navbar/Logo";
-import type { FooterData } from "@/app/types/footer";
+import type {
+  FooterAddress,
+  FooterPhone,
+  FooterSection,
+} from "@/app/types/footer";
+import type { SocialMedia } from "@/app/types/social";
 
-type FooterProps = FooterData;
+type FooterProps = {
+  address: FooterAddress;
+  phones: FooterPhone[];
+  sections: FooterSection[];
+  socialMedia: SocialMedia[];
+  copyright: string;
+};
 
 export default function Footer({
   address,

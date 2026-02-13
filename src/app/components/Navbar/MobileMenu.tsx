@@ -1,22 +1,24 @@
-import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDownIcon } from '@heroicons/react/24/outline'
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import {
   SunIcon as SunIconSolid,
   MoonIcon as MoonIconSolid,
-} from '@heroicons/react/24/solid'
-import { menuItems } from '@/app/constants/navigation'
+} from "@heroicons/react/24/solid";
+import type { MenuItem } from "@/app/types/navigation";
 
 type MobileMenuProps = {
-  isOpen: boolean
-  theme: string
-  openSubmenu: string | null
-  onSubmenuToggle: (label: string) => void
-  onClose: () => void
-  onThemeToggle: () => void
-}
+  menuItems: MenuItem[];
+  isOpen: boolean;
+  theme: string;
+  openSubmenu: string | null;
+  onSubmenuToggle: (label: string) => void;
+  onClose: () => void;
+  onThemeToggle: () => void;
+};
 
 export const MobileMenu = ({
+  menuItems,
   isOpen,
   theme,
   openSubmenu,
@@ -29,7 +31,7 @@ export const MobileMenu = ({
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
+          animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
           className="md:hidden"
@@ -51,7 +53,7 @@ export const MobileMenu = ({
                       {item.label}
                       <ChevronDownIcon
                         className={`h-4 w-4 transition-transform duration-200 ${
-                          openSubmenu === item.label ? 'rotate-180' : ''
+                          openSubmenu === item.label ? "rotate-180" : ""
                         }`}
                       />
                     </button>
@@ -59,7 +61,7 @@ export const MobileMenu = ({
                       {openSubmenu === item.label && (
                         <motion.div
                           initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
+                          animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.2 }}
                           className="pl-4 space-y-2 mt-2"
@@ -96,12 +98,12 @@ export const MobileMenu = ({
             >
               <button
                 onClick={() => {
-                  onThemeToggle()
-                  onClose()
+                  onThemeToggle();
+                  onClose();
                 }}
                 className="flex items-center py-2 hover:text-primary transition-colors"
               >
-                {theme === 'dark' ? (
+                {theme === "dark" ? (
                   <SunIconSolid className="h-5 w-5 mr-2 text-yellow-500" />
                 ) : (
                   <MoonIconSolid className="h-5 w-5 mr-2 text-blue-400" />
@@ -112,5 +114,5 @@ export const MobileMenu = ({
         </motion.div>
       )}
     </AnimatePresence>
-  )
-}
+  );
+};

@@ -2,7 +2,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaPhoneAlt } from "react-icons/fa";
-import type { InfoCardsSectionData } from "@/app/types/info-cards";
+import type { InfoCardLink } from "@/app/types/info-cards";
+import type { SedeInfo } from "@/app/types/address";
+import type { ScheduleEvent } from "@/app/types/event";
+
+type InfoCardsSectionProps = {
+  mainImage: string;
+  sedeInfo: SedeInfo;
+  scheduleEvents: ScheduleEvent[];
+  findUs: InfoCardLink;
+  agenda: InfoCardLink;
+  churchImage: string;
+};
 
 const InfoCardsSection = ({
   mainImage,
@@ -11,7 +22,7 @@ const InfoCardsSection = ({
   findUs,
   agenda,
   churchImage,
-}: InfoCardsSectionData) => {
+}: InfoCardsSectionProps) => {
   return (
     <section className="w-full py-16 md:py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 md:px-8">

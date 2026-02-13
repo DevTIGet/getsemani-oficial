@@ -17,6 +17,13 @@ export const SCHEDULE_EVENTS: ScheduleEvent[] = [
     times: ["20h"],
     variant: "secondary",
   },
+  {
+    id: 3,
+    title: "SÁBADO",
+    day: "SÁB",
+    times: ["19h"],
+    variant: "primary",
+  },
 ];
 
 export const SEDE_INFO: SedeInfo = {

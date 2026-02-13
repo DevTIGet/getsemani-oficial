@@ -1,4 +1,6 @@
-export const MAP_INFO = {
+import type { MapInfo } from "@/app/types/map";
+
+export const MAP_INFO: MapInfo = {
   title: "IGREJA BATISTA GETSAMANI",
   address: "R. Cassiano Campolina, 360 Dona Clara, Belo Horizonte - MG",
   embedUrl:

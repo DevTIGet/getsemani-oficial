@@ -1,16 +1,10 @@
-import { MAP_INFO } from "@/app/constants/address";
-
 type MapSectionProps = {
-  title?: string;
-  address?: string;
-  embedUrl?: string;
+  title: string;
+  address: string;
+  embedUrl: string;
 };
 
-const MapSection = ({
-  title = MAP_INFO.title,
-  address = MAP_INFO.address,
-  embedUrl = MAP_INFO.embedUrl,
-}: MapSectionProps) => {
+const MapSection = ({ title, address, embedUrl }: MapSectionProps) => {
   return (
     <section className="w-full py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 md:px-8">

@@ -11,6 +11,8 @@ export type CarouselProps = {
   slides: readonly SlideData[] | SlideData[];
   options?: EmblaOptionsType;
   autoplayDelay?: number;
+  mobileThumbsOptions?: EmblaOptionsType;
+  desktopThumbsOptions?: EmblaOptionsType;
 };
 
 export type CarouselSlideProps = {
