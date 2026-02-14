@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Ministry } from "@/app/types/ministry";
 
 type MinistryCardProps = {
@@ -33,7 +34,10 @@ export default function MinistryCard({
         </p>
 
         {/* Botão Saiba Mais com ícone */}
-        <button className="group bg-primary-blue/85 hover:bg-primary-blue dark:bg-primary/85 dark:hover:bg-primary/90 text-white font-semibold px-6 py-2.5 md:px-7 md:py-3 text-sm rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg">
+        <Link
+          href={`/igreja/ministerios/${ministry.slug}`}
+          className="inline-block group bg-primary-blue/85 hover:bg-primary-blue dark:bg-primary/85 dark:hover:bg-primary/90 text-white font-semibold px-6 py-2.5 md:px-7 md:py-3 text-sm rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg"
+        >
           <span className="flex items-center gap-2">
             SAIBA MAIS
             <svg
@@ -50,7 +54,7 @@ export default function MinistryCard({
               />
             </svg>
           </span>
-        </button>
+        </Link>
 
         {/* Imagem com overlay e efeito */}
         <div className="relative mt-6 md:mt-8 h-48 md:h-64 lg:h-80 rounded-2xl overflow-hidden shadow-2xl group/img">
