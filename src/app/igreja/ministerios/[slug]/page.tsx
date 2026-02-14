@@ -4,21 +4,22 @@ import ArticleSection from "@/app/igreja/_components/ministries/ArticleSection";
 import { MINISTRIES_DATA } from "@/app/constants/ministries";
 
 type MinistryPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 // Gera paths estáticos para todos os ministérios
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return MINISTRIES_DATA.map((ministry) => ({
     slug: ministry.slug,
   }));
 }
 
 // Gera metadados dinâmicos para SEO
-export function generateMetadata({ params }: MinistryPageProps) {
-  const ministry = MINISTRIES_DATA.find((m) => m.slug === params.slug);
+export async function generateMetadata({ params }: MinistryPageProps) {
+  const { slug } = await params;
+  const ministry = MINISTRIES_DATA.find((m) => m.slug === slug);
 
   if (!ministry) {
     return {
@@ -32,8 +33,9 @@ export function generateMetadata({ params }: MinistryPageProps) {
   };
 }
 
-export default function MinistryPage({ params }: MinistryPageProps) {
-  const ministry = MINISTRIES_DATA.find((m) => m.slug === params.slug);
+export default async function MinistryPage({ params }: MinistryPageProps) {
+  const { slug } = await params;
+  const ministry = MINISTRIES_DATA.find((m) => m.slug === slug);
 
   if (!ministry) {
     notFound();
