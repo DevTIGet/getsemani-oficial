@@ -22,6 +22,6 @@ export const menuItems: MenuItem[] = [
       { label: "InfoGet", href: "/informacoes/infoget" },
     ],
   },
-  { label: "Ofertas", href: "/#offers" },
+  { label: "Ofertas", href: "/ofertas" },
   { label: "Contato", href: "/#contact" },
 ];

@@ -33,6 +33,64 @@ export interface DonationBanner {
   buttonHref: string;
 }
 
+export interface OfferHeroSection {
+  title: string;
+  imageSrc: string;
+  imageAlt: string;
+  buttonText: string;
+  buttonHref: string;
+}
+
+export type ContributionMethodIcon =
+  | "app"
+  | "pix"
+  | "bank"
+  | "church"
+  | "qrcode";
+
+export interface ContributionMethod {
+  icon: ContributionMethodIcon;
+  title: string;
+  description: string;
+}
+
+export interface OfferContributionSection {
+  title: string;
+  methods: ContributionMethod[];
+  qrCode: {
+    title: string;
+    imageSrc?: string;
+  };
+}
+
+export interface OffersPageData {
+  heroSection: OfferHeroSection;
+  contributionSection: OfferContributionSection;
+  impactBanner: OfferImpactBanner;
+  actionsCarousel: OfferActionsCarousel;
+}
+
+export interface OfferActionItem {
+  id: number | string;
+  image: string;
+  title: string;
+  description: string;
+  href: string;
+}
+
+export interface OfferActionsCarousel {
+  title: string;
+  items: OfferActionItem[];
+}
+
+export interface OfferImpactBanner {
+  description: string;
+  stat: string;
+  statLabel: string;
+  imageSrc: string;
+  imageAlt: string;
+}
+
 export interface MinistriesPageData {
   headerSection: HeaderSection;
   volunteerSection: VolunteerSection;
