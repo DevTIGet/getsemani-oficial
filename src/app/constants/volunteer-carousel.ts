@@ -6,7 +6,7 @@ export const VOLUNTEER_CAROUSEL_DATA = {
     {
       image: "/imagens/slides/congresso-setxa-noite-195 2.png",
       title: "Lorem Ipsum is simply dummy",
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.",
     },
     {
       image: "/imagens/slides/congresso-setxa-noite-195 2.png",

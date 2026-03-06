@@ -121,7 +121,7 @@ export default function VolunteerCarousel({
                 </div>
 
                 {/* Content Section */}
-                <div className="w-full md:w-1/2 bg-primary p-8 md:p-12 flex flex-col justify-center">
+                <div className="w-full h-full md:w-1/2 bg-primary px-6 py-2 md:p-12 flex flex-col justify-center">
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                     {card.title}
                   </h3>
