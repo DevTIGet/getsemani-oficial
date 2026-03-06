@@ -11,7 +11,7 @@ type ArticleSectionProps = {
 
 export default function ArticleSection({ articles }: ArticleSectionProps) {
   return (
-    <section className="w-full py-12 md:py-16 bg-white dark:bg-gray-900">
+    <section className="w-full py-12 md:py-16 bg-white dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-16 md:space-y-24">
         {articles.map((article) => {
           const titleRef = useRef(null);
