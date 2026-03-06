@@ -67,6 +67,20 @@ export interface OffersPageData {
   heroSection: OfferHeroSection;
   contributionSection: OfferContributionSection;
   impactBanner: OfferImpactBanner;
+  actionsCarousel: OfferActionsCarousel;
+}
+
+export interface OfferActionItem {
+  id: number | string;
+  image: string;
+  title: string;
+  description: string;
+  href: string;
+}
+
+export interface OfferActionsCarousel {
+  title: string;
+  items: OfferActionItem[];
 }
 
 export interface OfferImpactBanner {

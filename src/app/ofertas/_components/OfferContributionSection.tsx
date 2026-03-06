@@ -22,7 +22,7 @@ export default function OfferContributionSection({
 }: OfferContributionSectionProps) {
   return (
     <section className="w-full max-w-7xl mx-auto px-4 py-8">
-      <h2 className="text-gray-900 dark:text-white font-bold text-xl md:text-4xl mb-6 md:mb-12">
+      <h2 className="text-gray-900 dark:text-white font-bold text-xl md:text-3xl mb-6 md:mb-12">
         {title}
       </h2>
 
