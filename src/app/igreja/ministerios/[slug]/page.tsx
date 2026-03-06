@@ -1,15 +1,17 @@
 import { notFound } from "next/navigation";
+
 import MinistryHero from "@/app/igreja/_components/ministries/MinistryHero";
 import ArticleSection from "@/app/igreja/_components/ministries/ArticleSection";
 import DonationBanner from "@/app/igreja/_components/ministries/DonationBanner";
-import { MINISTRIES_DATA } from "@/app/constants/ministries";
-import { MINISTRIES_PAGE_DATA } from "@/app/constants/ministries-page";
+import { SocialSection } from "@/app/igreja/_components/SocialSection";
 import ContentBrowser, {
   type ContentBrowserItem,
   type ContentBrowserCategory,
   type ContentBrowserSocialLink,
 } from "@/app/components/ContentBrowser";
 
+import { MINISTRIES_DATA } from "@/app/constants/ministries";
+import { MINISTRIES_PAGE_DATA } from "@/app/constants/ministries-page";
 import { SOCIAL_SECTION_DATA } from "@/app/constants/social-section";
 
 const ministryItems: ContentBrowserItem[] = MINISTRIES_DATA.map((m) => ({
@@ -93,6 +95,8 @@ export default async function MinistryPage({ params }: MinistryPageProps) {
       />
 
       <DonationBanner {...MINISTRIES_PAGE_DATA.donationBanner} />
+
+      <SocialSection {...SOCIAL_SECTION_DATA} />
     </div>
   );
 }
