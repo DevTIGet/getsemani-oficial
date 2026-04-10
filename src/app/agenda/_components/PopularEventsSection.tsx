@@ -7,13 +7,19 @@ type PopularEventsSectionProps = {
   title: string;
   href: string;
   events: AgendaPopularEvent[];
+  displayMode?: "limited" | "all";
+  showViewAll?: boolean;
 };
 
 const PopularEventsSection = ({
   title,
   href,
   events,
+  displayMode = "limited",
+  showViewAll = true,
 }: PopularEventsSectionProps) => {
+  const eventsToRender = displayMode === "limited" ? events.slice(0, 6) : events;
+
   return (
     <section className="w-full py-8 md:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,20 +27,30 @@ const PopularEventsSection = ({
           <h2 className="text-black dark:text-white text-2xl md:text-3xl font-bold">
             {title}
           </h2>
-          <Link
-            href={href}
-            className="text-primary text-xs md:text-sm font-semibold tracking-wide inline-flex items-center gap-1"
-          >
-            VER TODOS
-            <FiArrowUpRight className="text-base" />
-          </Link>
+          {showViewAll ? (
+            <Link
+              href={href}
+              className="text-primary text-xs md:text-sm font-semibold tracking-wide inline-flex items-center gap-1"
+            >
+              VER TODOS
+              <FiArrowUpRight className="text-base" />
+            </Link>
+          ) : null}
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-6 md:gap-x-6 md:gap-y-8">
-          {events.map((event, index) => (
+          {eventsToRender.map((event, index) => (
             <article
               key={`${event.title}-${index}`}
-              className={`w-full ${index >= 4 ? "hidden md:block" : ""}`}
+              className={`w-full ${
+                displayMode === "limited"
+                  ? index >= 6
+                    ? "hidden"
+                    : index >= 4
+                      ? "hidden md:block"
+                      : ""
+                  : ""
+              }`}
             >
               <Link href={event.href} className="block">
                 <div className="relative w-full h-36 sm:h-40 md:h-44 rounded-2xl overflow-hidden">

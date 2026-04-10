@@ -119,4 +119,36 @@ export const AGENDA_POPULAR_EVENTS: AgendaPopularEvent[] = [
       "Treinamento prático e bíblico para líderes de células, ministérios e voluntários.",
     href: "#",
   },
+  {
+    image: "/imagens/slides/teste.jpg",
+    date: "31 de Maio de 2026 • 19h",
+    title: "NOITE DE CLAMOR E INTERCESSÃO",
+    description:
+      "Um tempo de oração congregacional por famílias, cidade e avanço do Reino.",
+    href: "#",
+  },
+  {
+    image: "/imagens/slides/teste2.jpg",
+    date: "07 de Junho de 2026 • 17h",
+    title: "CULTO DE CELEBRAÇÃO COM BATISMOS",
+    description:
+      "Celebraremos novas vidas em Cristo com louvor, palavra e comunhão.",
+    href: "#",
+  },
+  {
+    image: "/imagens/slides/event.jpg",
+    date: "14 de Junho de 2026 • 14h",
+    title: "ENCONTRO DE CASAIS - ALIANÇA",
+    description:
+      "Uma tarde especial de ensino bíblico e fortalecimento dos relacionamentos.",
+    href: "#",
+  },
+  {
+    image: "/imagens/slides/teste4.png",
+    date: "21 de Junho de 2026 • 10h",
+    title: "AÇÃO SOCIAL GETSEMANI",
+    description:
+      "Atendimento comunitário, oração e cuidado com famílias da nossa região.",
+    href: "#",
+  },
 ];

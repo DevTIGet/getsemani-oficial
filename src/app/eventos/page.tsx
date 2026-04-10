@@ -1,23 +1,24 @@
-import AgendaCarousel from "./_components/AgendaCarousel";
-import PopularEventsSection from "./_components/PopularEventsSection";
+import AgendaCarousel from "@/app/agenda/_components/AgendaCarousel";
+import PopularEventsSection from "@/app/agenda/_components/PopularEventsSection";
 import {
   AGENDA_CAROUSEL_SLIDES,
   AGENDA_POPULAR_EVENTS,
 } from "@/app/constants/agenda-page";
 
-const Agenda = () => {
+const EventosPage = () => {
   return (
     <div className="w-full">
       <div className="py-8" />
       <AgendaCarousel slides={AGENDA_CAROUSEL_SLIDES} />
       <PopularEventsSection
-        title="Eventos Populares"
+        title="Todos os Eventos"
         href="/eventos"
         events={AGENDA_POPULAR_EVENTS}
-        displayMode="limited"
+        displayMode="all"
+        showViewAll={false}
       />
     </div>
   );
 };
 
-export default Agenda;
+export default EventosPage;
